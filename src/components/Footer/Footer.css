@@ -1,0 +1,11 @@
+.footer{
+    background-color: #EC6F75;
+    color: white;
+    padding: 15px 0;
+}
+
+small{
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
