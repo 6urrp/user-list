@@ -1,0 +1,7 @@
+.single-user{
+    margin: 20px auto;
+    display: flex;
+    width: 80%;
+    border-bottom: 1px solid rgb(201, 197, 197);
+    padding-bottom: 15px;
+}

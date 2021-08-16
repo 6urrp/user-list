@@ -1,7 +1,8 @@
 import React from "react";
 
 import { data } from "../data/AllUsers"
-import { User } from "../User/User.jsx"
+import { Avatar } from "../Avatar/Avatar";
+import { UserInfo } from "../UserInfo/UserInfo"
 
 import "./UserList.css"
 
@@ -10,7 +11,10 @@ const UserList = () =>{
         <div className="main-container">
             {
             data.results.map((user, index) => 
-                <User userData={user} key={index} />
+                <div className="single-user" key={index}>
+                    <Avatar userLogo={user}/>
+                    <UserInfo userData={user}/>
+                </div>
             )
             }
         </div>

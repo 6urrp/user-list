@@ -1,8 +1,8 @@
 import React from "react";
 
-import "./User.css";
+import "./UserInfo.css"
 
-const User = (props) => {
+const UserInfo = (props) => {
     let dateObj = new Date(props.userData.dob.date);
     let month = dateObj.getUTCMonth() + 1;
     let day = dateObj.getUTCDate();
@@ -11,17 +11,12 @@ const User = (props) => {
     let newDate = `${day}-${month}-${year}`;
 
     return (
-        <div className="single-user">
-            <div className="user-img">
-                <img src={props.userData.picture.thumbnail} alt="" />
-            </div>
-            <div className="user-data">
+        <div className="user-data">
                 <p>name: {props.userData.name.first}</p>
                 <p>email: {props.userData.email}</p>
                 <p>date of birth: {newDate}</p>
             </div>   
-        </div>
     )
 }
 
-export { User };
+export { UserInfo };
