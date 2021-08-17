@@ -2,10 +2,12 @@ import React from "react";
 
 import "./GridButton.css"
 
-const GridButton = () => {
+const GridButton = (props) => {
 
     return (
-        <button type="Submit" id="grid-button"><i class="fas fa-th"></i></button>
+        <button type="Submit" id="grid-button" onClick={props.onClick}>
+            <i className="fas fa-th"></i>
+        </button>
     )
 }
 

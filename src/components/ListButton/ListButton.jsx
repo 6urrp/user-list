@@ -2,10 +2,12 @@ import React from "react";
 
 import "./ListButton.css";
 
-const ListButton = () => {
+const ListButton = (props) => {
 
     return (
-        <button type="Submit" id="list-btn"><i class="fas fa-list"></i></button>
+        <button type="Submit" id="list-btn" onClick={props.onClick}>
+            <i className="fas fa-list"></i>
+        </button>
     )
 }
 
