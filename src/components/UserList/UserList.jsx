@@ -15,11 +15,9 @@ const UserList = () => {
 
     const onListClick = () => {
         setSelected(true);
-        console.log("Aaa")
     }
 
     const onGridClick = () => {
-        console.log("grid")
         setSelected(false);
     }
 

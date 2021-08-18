@@ -1,5 +1,7 @@
 import React from "react";
 
+import { showBirthDate, hideEmail } from "../../utilities/functions"
+
 import "./UserListGrid.css";
 
 const UserListGrid = (props) => {
@@ -11,8 +13,8 @@ const UserListGrid = (props) => {
                 <h4>{props.userGridData.name.first}</h4>
             </div>
             <div>
-                <p>Name:{props.userGridData.email}</p>
-                <p>Date of birth:{props.userGridData.dob.date}</p>
+                <p>Name: {hideEmail(props.userGridData.email)}</p>
+                <p>Date of birth: {showBirthDate(props.userGridData.dob.date)}</p>
             </div>
         </React.Fragment>
 
