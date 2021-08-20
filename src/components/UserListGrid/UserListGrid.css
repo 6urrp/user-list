@@ -1,11 +1,39 @@
+.btn-container {
+    margin-bottom: 20px;
+}
+
 .flex-container {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 auto;
-    width: 80%;
+    justify-content: space-between;
+    margin: 20px auto;
+    width: 75%;
 }
 
 .single-grid-user {
-    width: 33%;
-    
+    width: 30%;
+    border: 1px solid rgb(206, 203, 203);
+    box-shadow: 2px 3px 5px 0px rgba(110,106,106,0.76);
+    margin-bottom: 20px;
+}
+
+.img-container {
+    width: 100%;
+    position: relative;
+}
+img {
+    width: 100%;
+}
+
+h4 {
+    font-size: 1em;
+    font-weight: 400;
+    color: white;
+    position: absolute;
+    bottom: 0px;
+    left: 10px;
+}
+
+.data-container {
+    padding: 0 20px;
 }

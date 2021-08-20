@@ -8,11 +8,11 @@ const UserListGrid = (props) => {
 
     return (
         <React.Fragment>
-            <div>
+            <div className="img-container">
                 <img src={props.userGridData.picture.large} alt="" />
                 <h4>{props.userGridData.name.first}</h4>
             </div>
-            <div>
+            <div className="data-container">
                 <p>Name: {hideEmail(props.userGridData.email)}</p>
                 <p>Date of birth: {showBirthDate(props.userGridData.dob.date)}</p>
             </div>
