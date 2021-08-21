@@ -1,4 +1,4 @@
-import { Component, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { getUsers } from "../data/AllUsers"
 import { Avatar } from "../Avatar/Avatar";
@@ -13,18 +13,31 @@ const UserList = () => {
 
     const [selected, setSelected] = useState(true);
     const [users, setUsers] = useState([]);
+    const [inputValue, setInputValue] = useState("");
+    const [filteredUsers, setFilteredUsers] = useState([]);
 
     useEffect(() => {
         getUsers()
-            .then(users => setUsers(users))
+            .then(users => {
+                setUsers(users);
+                setFilteredUsers(users);
+            })
     }, [])
 
     const refreshPage = () => {
-        return (getUsers()
-                .then(users => setUsers(users))
-        )   
+        setInputValue("")
+        getUsers()
+                .then(users => {
+                    setUsers(users);
+                    setFilteredUsers(users)
+                })
     }
 
+    const onTyping = (event) => {
+        setInputValue(event.target.value);
+        const filtered = users.filter(user => user.name.first.includes(event.target.value));
+        setFilteredUsers(filtered);
+    }
 
     const onListClick = () => {
         setSelected(true);
@@ -41,9 +54,12 @@ const UserList = () => {
                 <ListButton onClick={onListClick}/>
                 <GridButton onClick={onGridClick}/>
             </div>
-            <div class="flex-container">
+            <div>
+                <input type="text" value={inputValue} onChange={onTyping} className="user-input" placeholder="Search user..." />
+            </div>
+            <div className="flex-container">
             {
-            users.map((user, index) => !selected 
+            filteredUsers.map((user, index) => !selected 
                 ? (
                 <div className="single-grid-user" key={index}>
                     <UserListGrid userGridData={user}/>

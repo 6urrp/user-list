@@ -13,7 +13,7 @@ const UserListGrid = (props) => {
                 <h4>{props.userGridData.name.first}</h4>
             </div>
             <div className="data-container">
-                <p>Name: {hideEmail(props.userGridData.email)}</p>
+                <p>Email: {hideEmail(props.userGridData.email)}</p>
                 <p>Date of birth: {showBirthDate(props.userGridData.dob.date)}</p>
             </div>
         </React.Fragment>
